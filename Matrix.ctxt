@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.params=values
+comment0.target=Matrix(double[][])
+comment0.text=\r\n\ Constructor\ for\ the\ objects\ of\ class\ Matrix.\r\n\ \ \r\n\ @param\ \ \ values\ \ \ A\ 2D\ array\ that\ takes\ in\ double\ values\ that\ will\ be\ used\ to\ create\ the\ matrix\r\n
+comment1.params=array\ skipRow\ skipCol
+comment1.target=double[][]\ createMatrixSubset(double[][],\ int,\ int)
+comment1.text=\r\n\ The\ method\ that\ creates\ a\ smaller\ matrix\ from\ a\ matrix\ by\ excluding\ a\ specific\ row\ and\ column.\r\n\r\n\ @pre\ \ \ \ \ The\ matrix\ that\ is\ passed\ in\ is\ a\ square\ from\ the\ getDet()\ method.\r\n\ @param\ \ \ array\ \ A\ 2D\ array\ with\ double\ values\ to\ represent\ a\ matrix\r\n\ \ \ \ \ \ \ \ \ \ skipRow\ The\ index\ value\ for\ the\ row\ that\ has\ to\ be\ skipped\r\n\ \ \ \ \ \ \ \ \ \ skipCol\ The\ index\ value\ for\ the\ column\ that\ has\ to\ be\ skipped\r\n\ @return\ \ Returns\ a\ 2D\ array\ representing\ the\ matrix\ subset.\r\n
+comment2.params=
+comment2.target=double\ getDet()
+comment2.text=\r\n\ The\ method\ that\ calculates\ the\ determinant\ of\ a\ matrix.\r\n\r\n\ @return\ \ A\ double\ value\ representing\ the\ determinant\ of\ the\ matrix\r\n
+comment3.params=
+comment3.target=double[][]\ getInv()
+comment3.text=\r\n\ The\ method\ that\ returns\ the\ inverse\ of\ the\ matrix\ by\ utilizing\ the\ determinant\ and\ the\ adjoint.\r\n\r\n\ @return\ \ Returns\ a\ 2D\ array\ representing\ the\ inverse\ matrix.\r\n
+comment4.params=
+comment4.target=double[][]\ transpose()
+comment4.text=\r\n\ The\ method\ that\ transposes\ a\ matrix.\r\n\r\n\ @return\ \ Returns\ a\ 2D\ array\ representing\ the\ transposed\ matrix\r\n
+comment5.params=
+comment5.target=double\ trace()
+comment5.text=\r\n\ The\ method\ that\ calculates\ the\ trace\ of\ the\ matrix.\r\n\r\n\ @return\ \ Returns\ a\ double\ value\ which\ represents\ the\ trace\ of\ the\ matrix\r\n
+comment6.params=mat1\ mat2
+comment6.target=double[][]\ mult(double[][],\ double[][])
+comment6.text=\r\n\ The\ method\ that\ multiplies\ two\ matrices\ with\ each\ other.\r\n\r\n\ @param\ \ \ mat1\ \ \ \ A\ 2D\ array\ with\ double\ values\ to\ represent\ a\ matrix\r\n\ \ \ \ \ \ \ \ \ \ mat2\ \ \ \ A\ 2D\ array\ with\ double\ values\ to\ represent\ a\ matrix\r\n\ @return\ \ Returns\ a\ 2D\ array\ representing\ the\ multiplied\ matrix.\r\n
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8
