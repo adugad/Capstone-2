@@ -41,8 +41,7 @@ Pseudocode for getDet() method:
 If the matrix is a 2 by 2 matrix, calculate its determinant by multiplying its diagonal values and
 subtracting them.
 
-Else, create a matrix subset (using the createMatrixSubset() method) and run the getDet() method
-on that matrix subset.
+Else, create a matrix subset and run the getDet() method on that matrix subset.
 
 Pseudocode for getInv() method:
 
