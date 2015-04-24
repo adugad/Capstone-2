@@ -7,7 +7,7 @@
 public class Matrix
 {
     double[][] matrix;
-    
+
     /**
      * Constructor for the objects of class Matrix.
      *  
@@ -71,28 +71,44 @@ public class Matrix
     public double getDet(double[][] matrix)
     {
         double det = 0;
-        double[][] array = this.matrix;
-        if (array.length == array[0].length)
+        if (matrix.length == matrix[0].length)
         {
-            if(array.length == 2)
+            if(matrix.length == 2)
             {
-                det = array[0][0]*array[1][1] - array[0][1]*array[1][0];
+                det = matrix[0][0]*matrix[1][1] - matrix[0][1]*matrix[1][0];
                 return det;
             }
             else
             {
-                for(int i = 0; i < 1; i++)
+                for(int j = 0; j < matrix[0].length; j++)
                 {
-                    for(int j = 0; j < array[0].length; j++)
+                    double l = 1;
+                    double[][] newMatrix = new double[matrix.length-1][matrix[0].length-1];
+                    int ni = 0;
+                    int nj = 0;
+                    for(int k = 1; k < matrix.length; k++)
                     {
-                        double k = 1;
-                        double[][] newMatrix = createMatrixSubset(array,i,j);
-                        if((i+j)%2 != 0)
+                        nj =0;
+                        for(int i = 0; i < matrix[0].length; i++)
                         {
-                            k = -1;
+                            if(i == j)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                newMatrix[ni][nj] = matrix[k][i];
+                                nj++;
+                            }
                         }
-                        det += k * array[i][j] * getDet(newMatrix);
+                        ni++;
                     }
+                    
+                    if((j)%2 != 0)
+                    {
+                        l = -1;
+                    }
+                    det += l * matrix[0][j] * getDet(newMatrix);
                 }
             }
         }
@@ -211,7 +227,7 @@ public class Matrix
             throw new ArithmeticException("Matrices cannot be multiplied together.");
         }
     }
-    
+
     /**
      * Returns the 2D array matrix instance variable
      * 
@@ -221,7 +237,7 @@ public class Matrix
     {
         return this.matrix;
     }
-    
+
     /**
      * The toString() method for the Matrix class
      * 

@@ -26,9 +26,9 @@ public class MatrixTester
         {
             cols = in.nextInt();
         }
-        
+
         double[][] matVals = new double[rows][cols];
-        
+
         for(int i = 0; i < rows; i++)
         {
             for(int j = 0; j < cols; j++)
@@ -42,26 +42,33 @@ public class MatrixTester
                 }
             }
         }
-        
+
         Matrix matrix = new Matrix(matVals);
-        
+
         System.out.println("Here is your matrix:\n" + matrix + "\n");
-        
-        double det = matrix.getDet(matrix.getMatrix());
-        
-        System.out.println(det);
-        
-        //Matrix inverse = new Matrix(matrix.getInv());
-        
-        //System.out.println(inverse);
-        
+
+        if(matVals.length == matVals[0].length)
+        {
+            double det = matrix.getDet(matrix.getMatrix());
+
+            System.out.println("Here is the determinant of your matrix: " + det);
+
+            double trace = matrix.trace();
+
+            System.out.println("Here is the trace of your matrix: " + trace + "\n");
+
+            if(det != 0)
+            {
+                Matrix inverse = new Matrix(matrix.getInv());
+
+                System.out.println(inverse);
+            }
+        }
+
         Matrix transpose = new Matrix(matrix.transpose());
-        
+
         System.out.println("Here is your matrix transposed:\n" + transpose + "\n");
-        
-        double trace = matrix.trace();
-        
-        System.out.println("Here is the trace of your matrix: " + trace + "\n");
+
     }
 
 }
