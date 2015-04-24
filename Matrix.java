@@ -127,7 +127,7 @@ public class Matrix
     public double[][] getInv()
     {
         double det = getDet(this.matrix);
-        double[][] array = this.matrix;
+        double[][] array = new double[matrix.length][matrix[0].length];
         if(array.length == array[0].length || det != 0)
         {
             for(int i = 0; i < array.length; i++)
@@ -135,7 +135,7 @@ public class Matrix
                 for(int j = 0; j < array[0].length; j++)
                 {
                     double k = 1;
-                    double[][] newMatrix = createMatrixSubset(array,i,j);
+                    double[][] newMatrix = createMatrixSubset(matrix,i,j);
                     if((i+j)%2 != 0)
                     {
                         k = -1;
@@ -163,14 +163,15 @@ public class Matrix
      */
     public double[][] transpose()
     {
-        int cols = matrix[0].length;
-        int rows = matrix.length;
+        double[][] array = this.matrix;
+        int cols = array[0].length;
+        int rows = array.length;
         double[][] newMatrix = new double[cols][rows];
-        for(int r = 0; r < matrix.length; r++)
+        for(int r = 0; r < array.length; r++)
         {
-            for(int c = 0; c < matrix[0].length; c++)
+            for(int c = 0; c < array[0].length; c++)
             {
-                newMatrix[c][r] = matrix[r][c];
+                newMatrix[c][r] = array[r][c];
             }
         }
         return newMatrix;
@@ -207,7 +208,7 @@ public class Matrix
      */
     public double[][] mult(double[][] mat1, double[][] mat2)
     {
-        double[][] matrix = new double[mat1.length][mat2[0].length];
+        double[][] multMat = new double[mat1.length][mat2[0].length];
         if(mat1[0].length == mat2.length)
         {
             for(int i = 0; i < mat1.length; i++)
@@ -216,11 +217,11 @@ public class Matrix
                 {
                     for(int k = 0; k < mat1.length; k++)
                     {
-                        matrix[i][j] = mat1[i][k] * mat2[k][j];
+                        multMat[i][j] = mat1[i][k] * mat2[k][j];
                     }
                 }
             }
-            return matrix;
+            return multMat;
         }
         else
         {

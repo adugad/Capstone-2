@@ -46,6 +46,10 @@ public class MatrixTester
         Matrix matrix = new Matrix(matVals);
 
         System.out.println("Here is your matrix:\n" + matrix + "\n");
+        
+        Matrix transpose = new Matrix(matrix.transpose());
+        
+        System.out.println("Here is your matrix transposed:\n" + transpose + "\n");
 
         if(matVals.length == matVals[0].length)
         {
@@ -64,11 +68,5 @@ public class MatrixTester
                 System.out.println(inverse);
             }
         }
-
-        Matrix transpose = new Matrix(matrix.transpose());
-
-        System.out.println("Here is your matrix transposed:\n" + transpose + "\n");
-
     }
-
 }
