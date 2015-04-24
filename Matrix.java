@@ -65,9 +65,10 @@ public class Matrix
     /**
      * The method that calculates the determinant of a matrix.
      *
+     * @param   matrix  A 2D array with double values to represent a matrix
      * @return  A double value representing the determinant of the matrix
      */
-    public double getDet()
+    public double getDet(double[][] matrix)
     {
         double det = 0;
         double[][] array = this.matrix;
@@ -90,7 +91,7 @@ public class Matrix
                         {
                             k = -1;
                         }
-                        det += k * array[i][j] * getDet();
+                        det += k * array[i][j] * getDet(newMatrix);
                     }
                 }
             }
@@ -109,7 +110,7 @@ public class Matrix
      */
     public double[][] getInv()
     {
-        double det = getDet();
+        double det = getDet(this.matrix);
         double[][] array = this.matrix;
         if(array.length == array[0].length || det != 0)
         {
@@ -123,7 +124,7 @@ public class Matrix
                     {
                         k = -1;
                     }
-                    double value = k * getDet();
+                    double value = k * getDet(newMatrix);
                     array[i][j] = value / det;
                 }
             }
@@ -211,6 +212,21 @@ public class Matrix
         }
     }
     
+    /**
+     * Returns the 2D array matrix instance variable
+     * 
+     * @return Returns a 2D array representing the matrix.
+     */
+    public double[][] getMatrix()
+    {
+        return this.matrix;
+    }
+    
+    /**
+     * The toString() method for the Matrix class
+     * 
+     * @return Returns a string representing a matrix object.
+     */
     public String toString()
     {
         String str = "[ ";

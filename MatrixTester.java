@@ -47,7 +47,7 @@ public class MatrixTester
         
         System.out.println("Here is your matrix:\n" + matrix + "\n");
         
-        double det = matrix.getDet();
+        double det = matrix.getDet(matrix.getMatrix());
         
         System.out.println(det);
         
