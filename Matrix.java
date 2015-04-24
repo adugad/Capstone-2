@@ -153,7 +153,17 @@ public class Matrix
         {
             throw new ArithmeticException("Matrix is not a square.");
         }
-        return array;
+        int cols = array[0].length;
+        int rows = array.length;
+        double[][] newMatrix = new double[cols][rows];
+        for(int r = 0; r < array.length; r++)
+        {
+            for(int c = 0; c < array[0].length; c++)
+            {
+                newMatrix[c][r] = array[r][c];
+            }
+        }
+        return newMatrix;
     }
 
     /**
@@ -217,7 +227,7 @@ public class Matrix
                 {
                     for(int k = 0; k < mat1.length; k++)
                     {
-                        multMat[i][j] = mat1[i][k] * mat2[k][j];
+                        multMat[i][j] += mat1[i][k] * mat2[k][j];
                     }
                 }
             }
